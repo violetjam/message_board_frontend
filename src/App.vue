@@ -45,7 +45,7 @@ const loadMessages = async (page = 1) => {
     const data = response.data.data
     
     messages.value = data.messages
-    currentPage.value = data.current_page
+    currentPage.value = data.page  // 修改这里：从 current_page 改为 page
     totalPages.value = data.total_pages
   } catch (error) {
     console.error('加载留言失败:', error)
